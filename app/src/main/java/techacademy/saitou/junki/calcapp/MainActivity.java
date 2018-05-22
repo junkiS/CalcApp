@@ -53,11 +53,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             db = Double.parseDouble(val); //String型からDouble型に変換
             db2 = Double.parseDouble(val2);
 
+
         } catch (NumberFormatException e) {
             Log.d("TextView", "なにも入力されていません。");
             return;
         }
-
+        
         if (v.getId() == R.id.button1) {
             result = db + db2; // +
         } else if (v.getId() == R.id.button2) {

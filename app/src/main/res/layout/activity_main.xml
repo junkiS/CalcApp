@@ -30,24 +30,18 @@
         android:text="わる"
         android:id="@+id/button4"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:id="@+id/textView"/>
-
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="数字を入力してください"
-        android:inputType="number"
+        android:hint="なにか数値を入力してください"
+        android:inputType="numberDecimal"
         android:id="@+id/editText"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="数字を入力してください"
-        android:inputType="number"
+        android:hint="なにか数値を入力してください"
+        android:inputType="numberDecimal"
         android:id="@+id/editText2"/>
 
 </LinearLayout>
