@@ -13,7 +13,6 @@ import android.util.Log;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     //メンバ関数定義
-    TextView mTextView;
     EditText mEditText;
     EditText EditText2;
 
@@ -32,13 +31,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button4.setOnClickListener(this);
 
         // findViewByIdを使ってインスタンスを代入
-        mTextView = (TextView) findViewById(R.id.textView);
         mEditText = (EditText) findViewById(R.id.editText);
         EditText2 = (EditText) findViewById(R.id.editText2);
     }
 
     @Override
     public void onClick(View v) {
+
+        TextView mTextView;
+        mTextView = (TextView) findViewById(R.id.textView);
 
         String val = mEditText.getText().toString();
         double db; //double db 宣言
@@ -62,11 +63,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 throw new ArithmeticException("0で割ったときの例外を発生させる");
             }
             result = db / db2;
-            return;
+
         }catch (Exception e){
             System.out.println("例外が発生しました。");
             System.out.println(e);
-
+            mTextView.setText("0除算は出来ません");
+            return;
         }
 
 
