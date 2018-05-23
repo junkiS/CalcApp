@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         try {
             if (db2 == 0) {
-                throw new ArithmeticException("0で割ったときの例外を発生させる");
+                throw new ArithmeticException("0例外発生");
             }
             result = db / db2;
 
