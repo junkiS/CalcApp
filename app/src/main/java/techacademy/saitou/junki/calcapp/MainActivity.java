@@ -41,10 +41,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
 
         String val = mEditText.getText().toString();
-        double db ; //double db 宣言
+        double db; //double db 宣言
 
         String val2 = EditText2.getText().toString();
-        double db2 ;
+        double db2;
 
         double result = 0;
 
@@ -53,12 +53,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             db = Double.parseDouble(val); //String型からDouble型に変換
             db2 = Double.parseDouble(val2);
 
-
         } catch (NumberFormatException e) {
-            Log.d("TextView", "なにも入力されていません。");
+            Log.d("Text", "なにも入力されていません。");
             return;
         }
-        
+        try {
+            if (db2 == 0) {
+                throw new ArithmeticException("0で割ったときの例外を発生させる");
+            }
+            result = db / db2;
+            return;
+        }catch (Exception e){
+            System.out.println("例外が発生しました。");
+            System.out.println(e);
+
+        }
+
+
         if (v.getId() == R.id.button1) {
             result = db + db2; // +
         } else if (v.getId() == R.id.button2) {
@@ -71,7 +82,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent = new Intent(this, SecondActivity.class);
         intent.putExtra("EditText", result);
         startActivity(intent);
-
-
     }
 }
